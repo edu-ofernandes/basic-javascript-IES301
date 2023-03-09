@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 1</title>
+</head>
+<body>
+    <ul>
+        <li><a href="#" id="exercício-1">Exercício 1</a></li>
+        <li><a href="#" id="exercício-2">Exercício 2</a></li>
+        <li><a href="#" id="exercício-3">Exercício 3</a></li>
+        <li><a href="#" id="exercício-4">Exercício 4</a></li>
+    </ul>
+    <script>
+        function verificarTipo() {
+			let valor = prompt("Insira um valor:");
+			let tipo = typeof valor;
+			let mensagem = "";
+
+			if (confirm("Deseja verificar o tipo do valor informado?")) {
+				mensagem = "O valor inserido é do tipo " + tipo + ".";
+			} else {
+				mensagem = "Obrigado por visitar esta página.";
+			}
+
+			document.getElementById("resultado").innerHTML = mensagem;
+		}
+    </script>
+</body>
+</html>
