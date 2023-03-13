@@ -7,26 +7,16 @@
     <title>Aula 1</title>
 </head>
 <body>
-    <ul>
-        <li><a href="#" id="exercício-1">Exercício 1</a></li>
-        <li><a href="#" id="exercício-2">Exercício 2</a></li>
-        <li><a href="#" id="exercício-3">Exercício 3</a></li>
-        <li><a href="#" id="exercício-4">Exercício 4</a></li>
-    </ul>
+    <p id="resultado"></p>
     <script>
-        function verificarTipo() {
-			let valor = prompt("Insira um valor:");
-			let tipo = typeof valor;
+        function verificarFatorial() {
+			let valor = parseInt(prompt("Insira um número inteiro:"));
 			let mensagem = "";
-
-			if (confirm("Deseja verificar o tipo do valor informado?")) {
-				mensagem = "O valor inserido é do tipo " + tipo + ".";
-			} else {
-				mensagem = "Obrigado por visitar esta página.";
-			}
-
+            let ePrimo = valor % 2 !== 0 && valor % valor === 0 && valor % 1 === 0 ? true : false;
+            mensagem = `O número ${valor} ${ePrimo ? " é" : " não é"} primo.`;
 			document.getElementById("resultado").innerHTML = mensagem;
 		}
+        verificarPrimo();
     </script>
 </body>
 </html>
