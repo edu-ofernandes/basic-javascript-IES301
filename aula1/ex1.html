@@ -7,19 +7,16 @@
     <title>Aula 1</title>
 </head>
 <body>
-    <ul>
-        <li><a href="#" id="exercício-1">Exercício 1</a></li>
-        <li><a href="#" id="exercício-2">Exercício 2</a></li>
-        <li><a href="#" id="exercício-3">Exercício 3</a></li>
-        <li><a href="#" id="exercício-4">Exercício 4</a></li>
-    </ul>
+    <p id="resultado"></p>
     <script>
         function verificarTipo() {
 			let valor = prompt("Insira um valor:");
 			let tipo = typeof valor;
 			let mensagem = "";
 
-			if (confirm("Deseja verificar o tipo do valor informado?")) {
+            let resposta = prompt("Deseja verificar o tipo do valor informado?: 0 para não e 1 para sim.");
+			
+            if (parseInt(resposta) === 1) {
 				mensagem = "O valor inserido é do tipo " + tipo + ".";
 			} else {
 				mensagem = "Obrigado por visitar esta página.";
@@ -27,6 +24,7 @@
 
 			document.getElementById("resultado").innerHTML = mensagem;
 		}
+        verificarTipo();
     </script>
 </body>
 </html>
