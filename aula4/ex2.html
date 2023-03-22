@@ -7,6 +7,21 @@
     <title>Aula 3</title>
 </head>
 <body>
-   <h1>Aula 3</h1>
-</body>
+    <p id="resultado"></p>
+    <script>
+        function calcularFatorial() {
+            let numero = parseInt(prompt("Digite um número inteiro positivo: "));
+
+            let fatorial = 1;
+      
+            for (let i = 1; i <= numero; i++) {
+                fatorial *= i;
+            }
+
+            let messagem = `O resultado do fatorial de ${numero} é ${fatorial}.`
+
+            document.getElementById('resultado').innerHTML = messagem; 
+        }
+        calcularFatorial();
+    </script></body>
 </html>

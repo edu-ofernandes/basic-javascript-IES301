@@ -7,13 +7,18 @@
     <title>Aula 2</title>
 </head>
 <body>
-    <ul>
-        <li><a href="#" id="exercício-1">Exercício 1</a></li>
-        <li><a href="#" id="exercício-2">Exercício 2</a></li>
-        <li><a href="#" id="exercício-3">Exercício 3</a></li>
-    </ul>
+    <p id="relogio"></p>
     <script>
-        
+        function atualizarRelogio() {
+            let agora = new Date();
+            let horas = agora.getHours().toString().padStart(2, '0');
+            let minutos = agora.getMinutes().toString().padStart(2, '0');
+            let segundos = agora.getSeconds().toString().padStart(2, '0');
+            let horario = horas + ":" + minutos + ":" + segundos;
+            document.getElementById("relogio").innerHTML = horario;
+        }
+
+        setInterval(atualizarRelogio, 1000);
     </script>
 </body>
 </html>

@@ -7,13 +7,19 @@
     <title>Aula 2</title>
 </head>
 <body>
-    <ul>
-        <li><a href="#" id="exercício-1">Exercício 1</a></li>
-        <li><a href="#" id="exercício-2">Exercício 2</a></li>
-        <li><a href="#" id="exercício-3">Exercício 3</a></li>
-    </ul>
+    <p id="resultado"></p>
     <script>
-        
+        function palindromo() {
+            let palavra = prompt('Digite uma palavra');
+            let reverso = palavra.split("").reverse().join("");
+            
+            let messagem;
+
+            messagem = reverso === palavra ? 'É um palíndromo!' : 'Não é palíndromo';
+
+            document.getElementById('resultado').innerHTML = messagem; 
+        }
+        palindromo();
     </script>
 </body>
 </html>

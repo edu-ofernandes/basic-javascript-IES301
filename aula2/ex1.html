@@ -7,13 +7,17 @@
     <title>Aula 2</title>
 </head>
 <body>
-    <ul>
-        <li><a href="#" id="exercício-1">Exercício 1</a></li>
-        <li><a href="#" id="exercício-2">Exercício 2</a></li>
-        <li><a href="#" id="exercício-3">Exercício 3</a></li>
-    </ul>
+    <p id="resultado"></p>
     <script>
-        
+        function exibirData() {
+            
+            let data = new Date().toLocaleDateString('pt-Br', {
+                dateStyle: 'full'
+            });
+
+            document.getElementById('resultado').innerHTML = data; 
+        }
+        exibirData();
     </script>
 </body>
 </html>
