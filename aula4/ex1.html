@@ -7,8 +7,43 @@
     <title>Aula 3</title>
 </head>
 <body>
-    <p id="resultado"></p>
+    <h1>Lista de tarefa</h1>
+    <input type="text" id="item">
+    <button onclick="adicionar()">Adicionar</button>
+    <ul id="list">
+    </ul>
+
     <script>
-       
-    </script></body>
+        const list = [];
+
+        function adicionar() {
+            let item = document.getElementById("item").value;
+            if (item.length) {
+                list.push(item);
+                document.getElementById("item").value = "";
+                mostrar();
+            }
+        }
+
+        function remover(index) {
+            list.splice(index, 1);
+            mostrar();
+        }
+
+        function mostrar() {
+            let listUl = document.getElementById("list");
+            listUl.innerHTML = "";
+            for (let i = 0; i < list.length; i++) {
+                let item = list[i];
+                let li = document.createElement("li");
+                li.appendChild(document.createTextNode(item));
+                let removeButton = document.createElement("button");
+                removeButton.innerHTML = "x";
+                removeButton.setAttribute("onclick", "remover(" + i + ")");
+                li.appendChild(removeButton);
+                listUl.appendChild(li);
+            }
+        }
+    </script>
+</body>
 </html>

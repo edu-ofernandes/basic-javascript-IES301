@@ -7,8 +7,39 @@
     <title>Aula 3</title>
 </head>
 <body>
-    <p id="resultado"></p>
-    <script>
-       
-    </script></body>
+    <h1>Array Dinâmico</h1>
+
+	<form>
+		<label for="inputValor">Insira um valor:</label>
+		<input type="text" id="inputValor" name="inputValor">
+		<button type="button" onclick="adicionarValor()">Adicionar</button>
+	</form>
+
+	<ol id="listaValores">
+	</ol>
+
+	<script>
+		let valores = [];
+
+		function adicionarValor() {
+			let input = document.getElementById("inputValor");
+			let valor = input.value;
+			if (valor !== "") {
+				valores.push(valor);
+				valores.sort();
+				exibirValores();
+				input.value = "";
+			}
+		}
+
+		function exibirValores() {
+			let lista = document.getElementById("listaValores");
+			lista.innerHTML = "";
+			valores.forEach(function(valor) {
+				let item = document.createElement("li");
+				item.innerText = valor;
+				lista.appendChild(item);
+			});
+		}
+	</script>
 </html>
